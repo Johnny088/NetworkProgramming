@@ -40,7 +40,7 @@ namespace _01_clientUI
             client.Send(data, data.Length, remoteServer);
             //waiting answer from the server
             data = client.Receive(ref receiver);
-            
+            inputList.Items.Add(msg);
             msg = Encoding.Unicode.GetString(data);
             output.Items.Add(msg);
         }

@@ -75,7 +75,7 @@ namespace _01_Server
                 {
                     TempKey = msg;
                     byte[] temp;
-                    string request = "Hey mate, how should I response?";
+                    string request = "\nHey mate, how should I response?";
                     temp = Encoding.Unicode.GetBytes(request);
                     UdpReceiver.Send(temp, temp.Length, RemoteIpPoint);
                     Flag = true;
@@ -84,22 +84,29 @@ namespace _01_Server
                 if (Flag == true)
                 {
                     byte[] temp;
-                    string response = "Item was added";
+                    string response = "\nItem was added";
                     temp = Encoding.Unicode.GetBytes(response);
                     UdpReceiver.Send(temp, temp.Length, RemoteIpPoint);
                     MsgData.TryAdd(TempKey, msg);
-                    Dictionary<string, string> dictItem = new Dictionary<string, string>();
-                    dictItem.Add(TempKey, msg);
-                    writeToFile(dictItem);
+                    //Dictionary<string, string> dictItem = new Dictionary<string, string>();
+                    //dictItem.Add(TempKey, msg);
+                    //writeToFile(dictItem);
+                    writeToFile();
                     Flag = false;
                 }
 
             }
-            public void writeToFile(Dictionary <string,string> dictItem)
+            //public void writeToFile(Dictionary<string, string> dictItem)
+            //{
+            //    JsonString = JsonSerializer.Serialize(dictItem);
+            //    File.WriteAllText(FileName, JsonString);
+
+            //}
+            public void writeToFile()
             {
-                JsonString = JsonSerializer.Serialize(dictItem);
+                JsonString = JsonSerializer.Serialize(MsgData);
                 File.WriteAllText(FileName, JsonString);
-                
+
             }
             public void runingServer()
             {

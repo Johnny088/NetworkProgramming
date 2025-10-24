@@ -12,17 +12,20 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition />
-                <RowDefinition Height="100" />
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
-            <Button Margin="20 0 0 0" Grid.Column="2" Grid.Row="1" Background="#CFEE21" Foreground="#0A0A0A" 
+            <Button Margin="20 0 0 0" Grid.Column="3" Grid.Row="5" Background="#CFEE21" Foreground="#0A0A0A" 
                     FontSize="25" FontWeight="Bold" Content="Send" Click="BtnClick">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -37,15 +40,26 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Border Grid.Column="1" Grid.Row="1" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="20">
+            <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="20">
                 <TextBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="input" VerticalContentAlignment="Center"
                         FontSize="20" FontWeight="Bold"></TextBox>
             </Border>
 
-            <Border Grid.Column="1" Grid.Row="3" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="2 40 2 40" >
-                <ListBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="output"></ListBox>
+            <Border Grid.Column="1" Grid.Row="3" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="2 0 0 40" >
+                <ListBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="output" FontSize="20" FontWeight="Bold"></ListBox>
             </Border>
-            
+
+            <Border Grid.Column="2" Grid.Row="3" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="0 40 0 0" >
+                <ListBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="inputList" FontSize="20" FontWeight="Bold"></ListBox>
+            </Border>
+
+
+
+
+
+            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Background="#cfee21" CornerRadius="20">
+                <TextBlock Background="Transparent" TextAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="DemiBold">Messenger</TextBlock>
+            </Border>
             
         </Grid>
     </Grid>
