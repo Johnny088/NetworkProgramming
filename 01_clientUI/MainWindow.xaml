@@ -1,0 +1,52 @@
+﻿<Window x:Class="_01_clientUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_clientUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="850">
+    <Grid  Width="850" Height="600">
+        <Border Background="#212529" CornerRadius="20"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Button Margin="20 0 0 0" Grid.Column="2" Grid.Row="1" Background="#CFEE21" Foreground="#0A0A0A" 
+                    FontSize="25" FontWeight="Bold" Content="Send" Click="BtnClick">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}"
+                                              ForceCursor="{TemplateBinding Foreground}"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Border Grid.Column="1" Grid.Row="1" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="20">
+                <TextBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="input" VerticalContentAlignment="Center"
+                        FontSize="20" FontWeight="Bold"></TextBox>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="3" Background="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2" CornerRadius="2 40 2 40" >
+                <ListBox Background="Transparent" BorderThickness="0" Foreground="#0A0A0A" Name="output"></ListBox>
+            </Border>
+            
+            
+        </Grid>
+    </Grid>
+</Window>
