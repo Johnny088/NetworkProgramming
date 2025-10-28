@@ -10,6 +10,7 @@
         <DockPanel DockPanel.Dock="Top">
             <Label Margin="5" FontWeight="Bold" FontSize="25" DockPanel.Dock="Left">Message</Label>
             <Button Margin="5" DockPanel.Dock="right" FontWeight="Bold" FontSize="20" Background="lime" Padding="30 5" Click="connectBTN">connect</Button>
+            <Button Margin="5" DockPanel.Dock="right" FontWeight="Bold" FontSize="20" Background="lime" Padding="30 5" Click="disconnectBTN">disconnect</Button>
             <Button Margin="5" DockPanel.Dock="right" FontWeight="Bold" FontSize="20" Background="lime" Padding="30 5" Click="sendBTN">check</Button>
             <TextBox DockPanel.Dock="top" Margin="5" Name="msgText" VerticalContentAlignment="Center"></TextBox>
         </DockPanel>

@@ -3,16 +3,9 @@ using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace _03_RegionsCodesClient
 {
@@ -24,14 +17,14 @@ namespace _03_RegionsCodesClient
         NetworkStream ns;
         IPEndPoint ServerIP;
         TcpClient client;
-        static ObservableCollection<MessagesInfo> msg; 
+        static ObservableCollection<string> msg; 
         StreamReader sReader;
         StreamWriter sWriter;
         public MainWindow()
         {
             InitializeComponent();
             ns = null;
-            msg = new ObservableCollection<MessagesInfo>();
+            msg = new ObservableCollection<string>();
             sReader = null;
             sWriter = null;
             string address = ConfigurationManager.AppSettings["ServerIP"]!;
@@ -43,12 +36,26 @@ namespace _03_RegionsCodesClient
 
         private void connectBTN(object sender, RoutedEventArgs e)
         {
-            client.Connect(ServerIP);
-            ns = client.GetStream();
-            sReader = new StreamReader(ns);
-            sWriter = new StreamWriter(ns);
+            try
+            {
+                client.Connect(ServerIP);
+                ns = client.GetStream();
+                sReader = new StreamReader(ns);
+                sWriter = new StreamWriter(ns);
 
-            //Receiver
+                Receiver();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private async Task Receiver()
+        {
+            while (true)
+            {
+                msg.Add(await sReader.ReadLineAsync());
+            }
         }
 
         private void sendBTN(object sender, RoutedEventArgs e)
@@ -57,9 +64,11 @@ namespace _03_RegionsCodesClient
             sWriter.WriteLine(message);
             sWriter.Flush();
         }
-    }
-    public class MessagesInfo
-    {
 
+        private void disconnectBTN(object sender, RoutedEventArgs e)
+        {
+            ns.Close();
+            client.Close();
+        }
     }
 }
