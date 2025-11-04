@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_RegionsCodesClient", "03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_RegionsCodesServer", "03_RegionsCodesServer\03_RegionsCodesServer.csproj", "{513B0324-9A85-421C-941D-B575188A7922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail_Manager", "MailSender\Mail_Manager.csproj", "{78400D10-4E05-4FC1-8C10-467CC3AB60B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{513B0324-9A85-421C-941D-B575188A7922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513B0324-9A85-421C-941D-B575188A7922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513B0324-9A85-421C-941D-B575188A7922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78400D10-4E05-4FC1-8C10-467CC3AB60B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78400D10-4E05-4FC1-8C10-467CC3AB60B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78400D10-4E05-4FC1-8C10-467CC3AB60B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78400D10-4E05-4FC1-8C10-467CC3AB60B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
