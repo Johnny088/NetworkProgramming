@@ -22,7 +22,7 @@ namespace MailSender
     {
         const string server = "smpt.gmail.com";
         int port = 587;
-        const string username = "test@test.com";
+        const string username = "lenailyshun@gmail.com";
         const string password = "hadv dehd bsdf ocye";
         public MainWindow()
         {
